@@ -11,6 +11,9 @@ class AdminController < ApplicationController
         @user_input_people = params[:people]
         @user_input_place = params[:place]
         @user_input_time = params[:time]
+        @user_input_start_time = params[:select_start_time]
+        @user_input_end_time = params[:select_end_time]
+        @user_input_phonenumber = params[:phone]
     end
     # html5 notification
     # chatbot api 
