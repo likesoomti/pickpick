@@ -14,6 +14,7 @@
    <p> 장소 <%= text_field 'place' ,nil %>
     </p>
     <p> 시간 <%= text_field 'time' ,nil %>
+    <%= datetime_local_field(:user, :select_time) %>
 </p>
 
 <%= submit_tag 'submit' %>
