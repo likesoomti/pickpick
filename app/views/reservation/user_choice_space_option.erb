@@ -7,14 +7,9 @@
 4.시간 (몇시~몇시)
 
 <%= form_tag '/accept_user' ,method: "post" do %>
-<p>
-   인원 <%= text_field 'people' ,nil %>
-    </p>
-    
-   <p> 장소 <%= text_field 'place' ,nil %>
-    </p>
-    <p> 시간 <%= text_field 'time' ,nil %>
-</p>
-
+    <p> 인원 <%= text_field 'people' ,nil %> </p>
+    <p> 장소 <%= text_field 'place' ,nil %></p>
+    <p> 시간 <%= text_field 'time' ,nil %></p>
 <%= submit_tag 'submit' %>
+
 <%end%>

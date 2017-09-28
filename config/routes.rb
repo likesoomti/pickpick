@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   
   # 호스트가 사용자의 예약 폼을 받아보는 곳 tykim0927
   get 'accept_user' => "admin#admin_accept_user"
-  
+
   post'accept_user' =>"admin#admin_accept_user"
   
   
