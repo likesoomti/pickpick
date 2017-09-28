@@ -5,8 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# 2017.09.25 soomti
 # 회원가입을 위한 devise gem
 gem 'devise'
+# facebook 연동에 필요한 omniauth, facebook gem
+gem 'omniauth'
+gem 'omniauth-facebook'
+
+# secret key 보호를 위한 gem figaro 
+gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
@@ -50,6 +57,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # 2017.09.28 soomti
+  # rails_db add
+  gem 'rails_db'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

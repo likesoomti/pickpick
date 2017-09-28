@@ -14,6 +14,11 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  # 2017.09.25 
+  # soomti 
+  # facebook sns 연동을 위한 config 설정
+  config.omniauth :facebook, ENV["Facebook_Key"], ENV["Facebook_Secret"]
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

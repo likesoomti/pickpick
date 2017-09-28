@@ -21,7 +21,18 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       # 2019.09.25
       # soomti add
+      # 사용자의 휴대폰 번호를 담는다.
       t.string :phone_number
+      # 사용자의 이름을 담는다. 
+      t.string :user_name
+
+      # 사용자의 권한을 담는다.
+
+      # 0 -> 휴대폰 번호를 추가로 입력하지 않은 사용자. 
+      # 1 -> 휴대폰 번호를 추가로 입력한 사용자. 
+
+      # 0 일 경우에는, 사용자 시큐리티 설정. 권한을 입력하는 값을 넣는다.
+      t.string :user_level, default: 0
       
       ## Confirmable
       # t.string   :confirmation_token

@@ -1,0 +1,18 @@
+<%= form_tag(user_infoget_path) do %>
+<div class="ui raised segment">
+  <div class="ui field">
+    <label for="phone" >phone</label>
+    <%= text_field_tag :phone, nil, placeholder: "01025366326" %>
+    <label for="예약자 이름" >email</label>
+    <%= text_field_tag :username, nil, placeholder: "한수민" %>
+  </div>
+    <%= submit_tag "제출", :class => 'ui fluid large yellow submit button' %>
+<% end %>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.ui.radio.checkbox').checkbox();
+});
+</script>
