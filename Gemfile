@@ -12,7 +12,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-# secret key 보호를 위한 gem figaro 
+# secret key 보호를 위한 gem figaro
 gem 'figaro'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -30,6 +30,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
