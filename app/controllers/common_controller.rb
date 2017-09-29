@@ -6,9 +6,9 @@ class CommonController < ApplicationController
     before_action :set_user, only: [:index]
     # to do
     # 공통 페이지 컨트롤러
-    # 룸 디테일 컷 
+    # 룸 디테일 컷
 
-    # :: excavator :: 
+    # :: excavator ::
     def index
     end
 
