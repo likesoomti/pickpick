@@ -1,4 +1,4 @@
-@import url(font-awesome.min.css);
+@import "font-awesome";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 
 /*
@@ -3407,7 +3407,7 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		background-image: url("../../images/banner.jpg");
+		background-image: url('banner.jpg');
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;

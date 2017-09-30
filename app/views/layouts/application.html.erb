@@ -2,6 +2,10 @@
 <html>
   <head>
     <title>SpacePick</title>
+
+    <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +13,20 @@
   </head>
 
   <body>
+    <%= render 'partials/header' %>
+    <%= render 'partials/menu' %>
+    <%= render 'partials/banner' %>
+
     <%= yield %>
+
+    <%= render 'partials/contact' %>
+    <%= render 'partials/footer' %>
   </body>
+
+  <!-- Scripts -->
+  <!--
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  -->
+
 </html>

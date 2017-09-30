@@ -15,4 +15,6 @@
 //= require jquery_ujs
 //= require skel.min.js
 //= require util.js
+//= require jquery.scrollex.min.js
+//= require jquery.scrolly.min.js
 //= require_tree .
