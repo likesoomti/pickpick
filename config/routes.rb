@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   # common page
   root 'common#index'
 
-  get 'common/index'
-  get 'common/elements'
-  get 'common/generic'
-  get 'common/landing'
+  get '/common/index'
+  get '/common/elements'
+  get '/common/generic'
+  get '/common/landing'
 
 
   # 2017.09.28 soomti

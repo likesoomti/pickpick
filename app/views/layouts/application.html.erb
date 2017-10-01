@@ -13,14 +13,18 @@
   </head>
 
   <body>
-    <%= render 'partials/header' %>
-    <%= render 'partials/menu' %>
-    <%= render 'partials/banner' %>
+    <div id="wrapper">
 
-    <%= yield %>
+      <%= render 'partials/header' %>
+      <%= render 'partials/menu' %>
+      <%= render 'partials/banner' %>
 
-    <%= render 'partials/contact' %>
-    <%= render 'partials/footer' %>
+      <%= yield %>
+
+      <%= render 'partials/contact' %>
+      <%= render 'partials/footer' %>
+    </div>
+
   </body>
 
   <!-- Scripts -->
