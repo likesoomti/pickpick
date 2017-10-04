@@ -6,13 +6,12 @@
 3.장소
 4.시간 (몇시~몇시)
 
- <%= form_tag '/accept_user' ,method: "post" do %>
-  <p>인원 <%= text_field 'people' ,nil %> </p>
- <p> 장소 <%= text_field 'place' ,nil %> </p>
- <p> 입실시간 <%= datetime_local_field 'select_start_time' ,nil %> ~ <br />
-      퇴실시간 <%= datetime_local_field 'select_end_time', nil %></p>
- <p>연락가능한 번호 <%= telephone_field 'phone', nil %> </p>
+<%= form_tag '/accept_user' ,method: "post" do %>
+    <p> 인원 <%= text_field 'people' ,nil %> </p>
+    <p> 장소 <%= text_field 'place' ,nil %></p>
+    <p> 시간 <%= text_field 'time' ,nil %></p>
+<%= submit_tag 'submit' %>
 
-<p><%= submit_tag 'submit' %></p>
 <%end%>
+
 </table>

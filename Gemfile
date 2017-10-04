@@ -12,8 +12,20 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
-# secret key 보호를 위한 gem figaro 
+# secret key 보호를 위한 gem figaro
 gem 'figaro'
+
+
+
+# 2017.09.30 excavator
+# 부트스트랩 적용을 위한 gem
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+# Use font-awesome as the css library
+gem 'font-awesome-rails'
+
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

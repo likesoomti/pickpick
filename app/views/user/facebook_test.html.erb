@@ -1,7 +1,47 @@
-<div style="margin-top: 200px; margin-left: 200px">
-        <% if user_signed_in? %>
-            <%= link_to('로그아웃', destroy_user_session_path, :method => :delete, :class => 'item borderless') %>
-        <% else %>
-            <%= link_to('로그인', new_user_session_path, :class => 'item borderless') %>
-        <% end %>
+<div class="container">
+    <div class="menu">
+        <div class="rev_do">
+            <a href="/choice_space">예약하기</a>
+        </div>
+        <div class="rev_list">
+            <a href="/">예약 내역 확인</a>
+        </div>
+    </div>
+    <div class="login_box">
+    <% if user_signed_in? %>
+        <%= link_to('로그아웃', destroy_user_session_path, :method => :delete, :class => 'item borderless') %>
+    <% else %>
+        <%= link_to('로그인', new_user_session_path, :class => 'item borderless') %>
+    <% end %>
+    </div>
+
 </div>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 1000px;
+  
+}
+.menu{
+    display: flex;
+    flex: 1;
+    height: 50%;
+    justify-content: space-around;
+    align-items: center;
+    background-color:pink;
+}
+.login_box{
+    display: flex;
+    flex: 1;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: skyblue;
+}
+</style>
+ 
