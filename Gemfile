@@ -25,7 +25,10 @@ gem 'jquery-rails'
 # Use font-awesome as the css library
 gem 'font-awesome-rails'
 
+# 2017.10.05 tykim
+# db를 한눈에 gem
 
+gem 'rails_db'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

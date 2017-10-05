@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>인원:</strong>
+  <%= @reservation.people %>
+</p>
+
+<p>
+  <strong>장소:</strong>
+  <%= @reservation.place %>
+</p>
+
+<p>
+  <strong>시간:</strong>
+  <%= @reservation.time %>
+</p>
+
+<%= link_to '예약 수정!!', edit_reservation_path(@reservation) %> |
+<%= link_to '처음으로', root_path %>
+<%= link_to '예약 취소!!!', @reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
+
