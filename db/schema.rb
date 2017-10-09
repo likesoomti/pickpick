@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20171005105906) do
 
-  create_table "admins", force: :cascade do |t|
-    t.integer "people"
-    t.string "place"
-    t.string "time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "identities", force: :cascade do |t|
     t.integer "user_id"
     t.string "provider"
