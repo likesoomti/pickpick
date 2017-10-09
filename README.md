@@ -21,4 +21,4 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* TAG GEM : https://github.com/mbleigh/acts-as-taggable-on 
