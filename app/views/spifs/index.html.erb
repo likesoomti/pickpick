@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Spifs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Pph</th>
+      <th>Photo</th>
+      <th>Place</th>
+      <th>Park</th>
+      <th>Smok</th>
+      <th>Wifi</th>
+      <th>Printer</th>
+      <th>Consent</th>
+      <th>Projector</th>
+      <th>Payment</th>
+      <th>Ot</th>
+      <th>Ct</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spifs.each do |spif| %>
+      <tr>
+        <td><%= spif.name %></td>
+        <td><%= spif.address %></td>
+        <td><%= spif.pph %></td>
+        <td><%= spif.photo %></td>
+        <td><%= spif.place %></td>
+        <td><%= spif.park %></td>
+        <td><%= spif.smok %></td>
+        <td><%= spif.wifi %></td>
+        <td><%= spif.printer %></td>
+        <td><%= spif.consent %></td>
+        <td><%= spif.projector %></td>
+        <td><%= spif.payment %></td>
+        <td><%= spif.ot %></td>
+        <td><%= spif.ct %></td>
+        <td><%= link_to 'Show', spif %></td>
+        <td><%= link_to 'Edit', edit_spif_path(spif) %></td>
+        <td><%= link_to 'Destroy', spif, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Spif', new_spif_path %>

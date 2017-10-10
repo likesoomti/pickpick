@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyText
+  pph: 1
+  photo: 
+  place: MyString
+  park: MyString
+  smok: MyString
+  wifi: MyString
+  printer: MyString
+  consent: MyString
+  projector: MyString
+  payment: MyString
+  ot: 2017-10-10 13:25:31
+  ct: 2017-10-10 13:25:31
+
+two:
+  name: MyString
+  address: MyText
+  pph: 1
+  photo: 
+  place: MyString
+  park: MyString
+  smok: MyString
+  wifi: MyString
+  printer: MyString
+  consent: MyString
+  projector: MyString
+  payment: MyString
+  ot: 2017-10-10 13:25:31
+  ct: 2017-10-10 13:25:31

@@ -1,0 +1,2 @@
+class Spif < ApplicationRecord
+end
