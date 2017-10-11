@@ -3,31 +3,33 @@
 one:
   name: MyString
   address: MyText
-  pph: 1
+  price_per_hour: 1
+  ot: 2017-10-11 11:57:56
+  ct: 2017-10-11 11:57:56
+  tel: 1
   photo: 
-  place: MyString
-  park: MyString
-  smok: MyString
+  parking: MyString
+  smoking: MyString
+  projector: MyString
   wifi: MyString
   printer: MyString
   consent: MyString
-  projector: MyString
   payment: MyString
-  ot: 2017-10-10 13:25:31
-  ct: 2017-10-10 13:25:31
+  place: MyString
 
 two:
   name: MyString
   address: MyText
-  pph: 1
+  price_per_hour: 1
+  ot: 2017-10-11 11:57:56
+  ct: 2017-10-11 11:57:56
+  tel: 1
   photo: 
-  place: MyString
-  park: MyString
-  smok: MyString
+  parking: MyString
+  smoking: MyString
+  projector: MyString
   wifi: MyString
   printer: MyString
   consent: MyString
-  projector: MyString
   payment: MyString
-  ot: 2017-10-10 13:25:31
-  ct: 2017-10-10 13:25:31
+  place: MyString

@@ -1,0 +1,92 @@
+<%= form_with(model: space_info, local: true) do |form| %>
+  <% if space_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(space_info.errors.count, "error") %> prohibited this space_info from being saved:</h2>
+
+      <ul>
+      <% space_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :space_info_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_area :address, id: :space_info_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price_per_hour %>
+    <%= form.number_field :price_per_hour, id: :space_info_price_per_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ot %>
+    <%= form.time_select :ot, id: :space_info_ot %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ct %>
+    <%= form.time_select :ct, id: :space_info_ct %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tel %>
+    <%= form.number_field :tel, id: :space_info_tel %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.text_field :photo, id: :space_info_photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parking %>
+    <%= form.text_field :parking, id: :space_info_parking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :smoking %>
+    <%= form.text_field :smoking, id: :space_info_smoking %>
+  </div>
+
+  <div class="field">
+    <%= form.label :projector %>
+    <%= form.text_field :projector, id: :space_info_projector %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wifi %>
+    <%= form.text_field :wifi, id: :space_info_wifi %>
+  </div>
+
+  <div class="field">
+    <%= form.label :printer %>
+    <%= form.text_field :printer, id: :space_info_printer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :consent %>
+    <%= form.text_field :consent, id: :space_info_consent %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment %>
+    <%= form.text_field :payment, id: :space_info_payment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :place %>
+    <%= form.text_field :place, id: :space_info_place %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

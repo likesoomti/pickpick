@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :space_infos
   resources :reservations
   
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'}
