@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   # 태영 라우트 예약 페이지
+  resources :space_infos
   resources :reservations
-  # 인완 라우트 가게 페이지
-  resources :spifs
+
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

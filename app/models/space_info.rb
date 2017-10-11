@@ -1,0 +1,2 @@
+class SpaceInfo < ApplicationRecord
+end

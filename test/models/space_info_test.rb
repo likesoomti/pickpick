@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SpifTest < ActiveSupport::TestCase
+class SpaceInfoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
