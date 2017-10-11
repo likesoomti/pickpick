@@ -12,6 +12,12 @@ class CommonController < ApplicationController
     def index
     end
 
+    # 2017.10.11 soomti
+    # html5 notification test
+    def html5_noti
+      
+    end
+
     private
     def set_user
       @user = current_user

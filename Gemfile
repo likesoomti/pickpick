@@ -25,11 +25,6 @@ gem 'jquery-rails'
 # Use font-awesome as the css library
 gem 'font-awesome-rails'
 
-# 2017.10.05 tykim
-# db를 한눈에 gem
-
-gem 'rails_db'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
@@ -63,6 +58,11 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  # 2017.10.05 tykim
+  
+  # db를 한눈에 gem
+  gem 'rails_db'
+
 end
 
 group :development do

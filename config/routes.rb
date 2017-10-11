@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  # 태영 라우트 예약 페이지
   resources :reservations
-  
+  # 인완 라우트 가게 페이지
+  resources :spifs
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -12,7 +14,9 @@ Rails.application.routes.draw do
   get '/common/elements'
   get '/common/generic'
   get '/common/landing'
-
+  
+  # soomin test 지울거임
+  get '/common/html5_noti'
 
   # 2017.09.28 soomti
   # 페이스북 추가 정보 페이지
