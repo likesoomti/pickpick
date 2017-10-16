@@ -1,9 +1,12 @@
-
-
 <!-- 사용자가 예약 폼을 작성하는 곳 -->
+<div id="main">
+  <section id="one">
+    <div class="inner">
 
-<h1>방을 찾아보세요</h1>
+      <h1>방을 찾아보세요</h1>
+      <%= render 'form', reservation: @reservation %>
+      <%= link_to '처음으로', root_path %>
 
-<%= render 'form', reservation: @reservation %>
-
-<%= link_to '처음으로', root_path %>
+    </div>
+  </section>
+</div>
