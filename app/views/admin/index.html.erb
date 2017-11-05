@@ -1,0 +1,62 @@
+<!-- Banner -->
+<section id="banner" class="major">
+        <div class="inner">
+          <header class="major">
+            <h1><%= @title %></h1>
+          </header>
+</section>
+<!-- link list -->
+<div id="main">
+    <section id="one" class="tiles">
+        <div class="manager Aliquam">
+            <div class="link">
+                <h3>예약 받기</h3>
+            </div>
+            <div class="content">
+              <ul class="actions">
+                <li>
+                  <%= link_to "Booking", admin_booking_path ,:class => "button next" %>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="manager Mango">
+            <div class="link"><h3> 예약 내역 확인</h3></div>
+            <div class="content">
+                <ul class="actions">
+                  <li>
+                    <%= link_to "history",admin_rev_history_path,:class => "button next" %>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<style>
+    #banner{
+        height: 50%;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .manager{
+        width: 50%;
+        height: 100%;
+        padding: 10%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    .Mango{
+        background-color: #CE716B
+    }
+    .Aliquam{
+        background-color: #63ACC9
+    }
+    .Etiam{
+        background-color: #6CA487
+    }
+</style>

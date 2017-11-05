@@ -30,6 +30,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
 
       # 0 -> 휴대폰 번호를 추가로 입력하지 않은 사용자. 
       # 1 -> 휴대폰 번호를 추가로 입력한 사용자. 
+      # 3 -> 휴대폰 번호를 다 입력한 스터디룸 주인
+      # 9 -> 웹 개발 관리자
 
       # 0 일 경우에는, 사용자 시큐리티 설정. 권한을 입력하는 값을 넣는다.
       t.string :user_level, default: 0

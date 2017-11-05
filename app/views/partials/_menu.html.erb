@@ -16,10 +16,16 @@
   </ul>
   <ul class="actions vertical">
     <li>
-      <a href="#" class="button special fit">Get Started</a>
+        <%= link_to('Sign Up', new_user_registration_path ,class: "button special fit") %>
     </li>
-    <li>
-      <a href="#" class="button fit">Log In</a>
-    </li>
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to('logout', destroy_user_session_path, :method => :delete, :class => 'button fit') %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to('login', new_user_session_path, :class => 'button fit') %>
+      </li>
+    <% end %>
   </ul>
 </nav>

@@ -1,3 +1,15 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.input_phone{
+    display: flex;
+    justify-content: flex-start;
+}
+.add_info{
+
+}
+.add_info_container{
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}

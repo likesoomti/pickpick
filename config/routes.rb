@@ -19,12 +19,25 @@ Rails.application.routes.draw do
   get '/common/html5_noti'
 
   # 2017.09.28 soomti
-  # 페이스북 추가 정보 페이지
-  get 'user/facebook_add_info'
+  # 유저 추가 정보 페이지
+  get 'user/add_info'
   # 가입 화면. 페이스북 버튼 클릭 테스트 페이지
   get 'user/facebook_test'
   # 페이스북 추가 정보 저장
   post 'user/infoget'
+
+  # manager page
+  get 'manager' => 'manager#index'
+  get 'manager/new' 
+  get 'manager/qna' 
+  get 'manager/user'
+  get 'manager/space'
+
+  # admin page
+
+  get 'admin' => 'admin#index'
+  get 'admin/rev_history'
+  get 'admin/booking'
 
 
 end

@@ -1,5 +1,6 @@
 class SpaceInfosController < ApplicationController
   before_action :set_space_info, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /space_infos
   # GET /space_infos.json
@@ -70,5 +71,14 @@ class SpaceInfosController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def space_info_params
       params.require(:space_info).permit(:name, :address, :price_per_hour, :ot, :ct, :tel, :photo, :parking, :smoking, :projector, :wifi, :printer, :consent, :payment, :place)
+    end
+
+    # soomti 11.05
+    # 유저 정보 추가 입력 하게 해놓음 
+    def set_user
+      @user = current_user
+      if(@user.user_level == "0")
+        redirect_to :user_add_info
+      end
     end
 end

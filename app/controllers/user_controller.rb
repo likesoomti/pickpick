@@ -2,7 +2,7 @@
 # UserController create
 # 사용자 관련 컨트롤러. 
 class UserController < ApplicationController
-    before_action :set_user, only: [:facebook_add_info, :infoget]
+    before_action :set_user, only: [:facebook_add_info]
  #   before_filter :authenticate_user!
     # 가게 검색 
     # 로그인 / 회원가입
@@ -30,11 +30,15 @@ class UserController < ApplicationController
 
     def infoget
       # 부가 정보를 입력한다.
+      @user = current_user
       @user.user_name = params[:username]
-      @user.phone_number = params[:phone]
+      phone = params[:phone1]+"-"+params[:phone2]+"-"+params[:phone3]
+      @user.phone_number =  phone
       # 부가 정보를 입력하면 level을 1로 바꾼다.
       
       # 유효성 검사 후 1로 수정하는 코드 필요할듯.
+      # 관리자
+      # @user.user_level = 9
       @user.user_level = (@user.user_level.to_i)+1
       @user.save
       redirect_to user_facebook_test_path
@@ -43,5 +47,8 @@ class UserController < ApplicationController
     private
     def set_user
       @user = current_user
+      if(@user.user_level == "0")
+        redirect_to :user_add_info_path 
+      end
     end
 end

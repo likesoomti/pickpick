@@ -3,7 +3,7 @@
 # root 및 공통(사용자,관리자)으로 페이지를 보여주는 컨트롤러. 
 class CommonController < ApplicationController   
     # set_user 설정.
-    before_action :set_user, only: [:index]
+    before_action :set_user
     # to do
     # 공통 페이지 컨트롤러
     # 룸 디테일 컷
@@ -19,7 +19,14 @@ class CommonController < ApplicationController
     end
 
     private
+     # soomti 11.05
+     # 유저 정보 추가 입력 하게 해놓음 
     def set_user
       @user = current_user
+      if(@user)
+        if(@user.user_level=="0")
+          redirect_to :user_add_info
+        end
+      end
     end
 end

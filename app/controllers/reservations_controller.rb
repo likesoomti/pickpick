@@ -15,6 +15,8 @@ class ReservationsController < ApplicationController
     # 둘다 승인 된 리스트 
     
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  # 사용자 권한 체크
+  before_action :set_user
 
   # GET /reservations
   #들어온 요청들을 관리자가 보는 곳 tykim 1005
@@ -79,5 +81,16 @@ class ReservationsController < ApplicationController
     def reservation_params
       #내가 허락한 파라미터들만 불러오겠다 (나중에 유저 파라미터 추가해야됨~)
       params.require(:reservation).permit(:people, :place, :time)
+    end
+    
+    # soomti 11.05
+    # 유저 정보 추가 입력 하게 해놓음 
+    def set_user
+      if(@user)
+        @user = current_user
+        if(@user.user_level="0")
+          redirect_to :user_add_info
+        end
+      end
     end
 end
