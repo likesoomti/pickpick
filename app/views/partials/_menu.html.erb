@@ -20,7 +20,8 @@
     </li>
     <% if user_signed_in? %>
       <li>
-        <%= link_to('logout', destroy_user_session_path, :method => :delete, :class => 'button fit') %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, :class => 'button fit', data: { confirm: "Are you sure?" } %>
+        
       </li>
     <% else %>
       <li>

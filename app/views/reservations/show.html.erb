@@ -11,8 +11,13 @@
 </p>
 
 <p>
-  <strong>시간:</strong>
+  <strong>모임일/시간:</strong>
   <%= @reservation.time %>
+</p>
+
+<p>
+  <strong>사용시간:</strong>
+  <%= @reservation.durationTime %>
 </p>
 
 <%= link_to '예약 수정!!', edit_reservation_path(@reservation) %> |
