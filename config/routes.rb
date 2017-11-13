@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/common/elements'
   get '/common/generic'
   get '/common/landing'
-  
+
   # soomin test 지울거임
   get '/common/html5_noti'
 
