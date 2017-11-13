@@ -3172,7 +3172,7 @@
 				-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 				transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 				background-color: #ffffff;
-				color: #242943;
+				color: #242943; 
 				display: inline-block;
 				line-height: 1.65em;
 				margin-right: 0.325em;
@@ -3280,7 +3280,7 @@
 			-webkit-animation: none;
 			-ms-animation: none;
 			animation: none;
-			background-color: transparent;
+			background-color: transparent; /* transparent; */
 			box-shadow: none;
 			position: absolute;
 		}
