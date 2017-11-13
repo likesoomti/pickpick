@@ -20,8 +20,6 @@ class AdminController < ApplicationController
     # html5 notification
     # chatbot api 
     def booking
-
-        @list = Reservation.all
     end
 
 
@@ -30,10 +28,9 @@ class AdminController < ApplicationController
     def set_user
         @user = current_user
         if(@user)
-            if(@user.user_level == "0")
+            if(@user.user_level == "0"|| @user.user_level == "1")
                 redirect_to :user_add_info
-            else(@user.user_level == "1")
-                redirect_to :user_add_info
+            end
         end
     end
 end

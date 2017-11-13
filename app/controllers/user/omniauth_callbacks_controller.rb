@@ -23,11 +23,15 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @identity = Identity.find_for_oauth(auth)
     @user = User.find(current_user.id)
     if @user.persisted?
+      puts "test"
+      puts @user.persisted?
+      puts @user.user_level
+      puts if(@user.user_level == 0)
       if(@user.user_level == '0')
-        user_facebook_add_info_path    
+        user_facebook_add_info_path
       else
-        common_main_path
-      end        
+        user_facebook_test_path
+      end
     else
       user_facebook_test_path
     end

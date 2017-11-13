@@ -5,10 +5,7 @@
                 <p>STORE NAME</p>
             </div>
             <div class="space_content">
-                <% @list.each do |p| %>
-                    <h1><%=p.id%></h1> 
-                    <h1><%=p.created_at%></h1>
-                <% end %>
+
             </div>
         </div>
     </div>
@@ -43,8 +40,5 @@
         justify-content: flex-start;
         align-content: center;
         padding: 10%;
-    }
-    .space_content p{
-        color:grey;
     }
 </style>

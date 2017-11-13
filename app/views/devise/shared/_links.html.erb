@@ -1,5 +1,5 @@
-<%# app/views/devise/shared/_links.html.erb %>
-<%# 소셜 로그인 버튼을 수정하는 부분입니다.%>
+# app/views/devise/shared/_links.html.erb
+# 소셜 로그인 버튼을 수정하는 부분입니다.
 <%- if devise_mapping.omniauthable? %>
   <div>
     <%- resource_class.omniauth_providers.each do |provider| %>
@@ -16,7 +16,7 @@
           <% else %>
             <% sns = '카카오' %>
           <% end %>
-          <%= sns %> Login
+          <%= sns %> 계정으로 로그인
         </button>
       <% end -%>
     <% end -%>
