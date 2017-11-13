@@ -1,0 +1,72 @@
+<!-- Banner -->
+<section id="banner" class="major">
+        <div class="inner">
+          <header class="major">
+            <h1><%= @title %></h1>
+          </header>
+</section>
+<!-- link list -->
+<div id="main">
+    <section id="one" class="tiles">
+        <div class="manager Aliquam">
+            <div class="link">
+                <h3>New Space</h3>
+            </div>
+            <div class="content">
+              <ul class="actions">
+                <li>
+                  <%= link_to "등록하기",admin_booking_path,:class => "button next" %>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="manager Mango">
+            <div class="link"><h3>User 관리</h3></div>
+            <div class="content">
+                <ul class="actions">
+                  <li>
+                    <%= link_to "user info ",manager_user_path,:class => "button next" %>
+                  </li>
+                </ul>
+            </div>
+        </div>
+        <div class="manager Etiam">
+            <div class="link"><h3>Space 관리</h3></div>
+            <div class="content">
+                <ul class="actions">
+                    <li>
+                        <%= link_to "Space info",space_infos_path ,:class => "button next" %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<style>
+    section{
+        width: 100%;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .manager{
+        width: 33%;
+        height: 100%;
+        padding: 10%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+    }
+    .Mango{
+        background-color: #CE716B
+    }
+    .Aliquam{
+        background-color: #63ACC9
+    }
+    .Etiam{
+        background-color: #6CA487
+    }
+</style>

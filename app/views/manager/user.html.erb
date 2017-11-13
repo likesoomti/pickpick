@@ -1,0 +1,36 @@
+<div class="user_info">
+<h1>가입 사용자</h1>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Email</th>
+      <th>User Name</th>
+      <th>로그인 횟수</th>
+      <th>마지막 로그인</th>
+      <th>Tel</th>
+      <th>user_level</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @UserList.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.user_name %></td>
+        <td><%= user.sign_in_count %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td><%= user.phone_number %></td>
+        <td><%= user.user_level %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<style>
+    .user_info{
+        margin: 10%;
+    }
+</style>

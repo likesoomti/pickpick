@@ -15,8 +15,6 @@ gem 'omniauth-facebook'
 # secret key 보호를 위한 gem figaro
 gem 'figaro'
 
-
-
 # 2017.09.30 excavator
 # 부트스트랩 적용을 위한 gem
 

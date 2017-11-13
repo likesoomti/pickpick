@@ -1,16 +1,37 @@
+<div class="add_info_container">
+  <h2 class="ui orange image header nicImage">
+  <div class="content">
+    추가 정보입력
+  </div>
+</h2>
 <%= form_tag(user_infoget_path) do %>
 <div class="ui raised segment">
   <div class="ui field">
-    <label for="phone" >phone</label>
-    <%= text_field_tag :phone, nil, placeholder: "01025366326" %>
-    <label for="예약자 이름" >email</label>
-    <%= text_field_tag :username, nil, placeholder: "한수민" %>
+    <div class="add_info">
+      <label for="phone" >phone</label>
+      <div class="input_phone">
+        <div class="phone_field">
+        <%= text_field_tag :phone1, nil, placeholder: "010" %>
+        </div>
+        -
+        <div class="phone_field">
+            <%= text_field_tag :phone2, nil, placeholder: "2536" %>
+        </div>
+        -
+        <div class="phone_field">
+            <%= text_field_tag :phone3, nil, placeholder: "6326" %>
+        </div>
+      </div>
+    </div>
+    <div class="add_info">
+      <label for="예약자 이름" >NAME</label>
+      <%= text_field_tag :username, nil, placeholder: "한수민" %>
+    </div>
   </div>
     <%= submit_tag "제출", :class => 'ui fluid large yellow submit button' %>
 <% end %>
   </div>
 </div>
-
 <script>
 $(document).ready(function(){
   $('.ui.radio.checkbox').checkbox();
