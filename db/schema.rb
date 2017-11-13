@@ -11,6 +11,17 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20171011115756) do
+<<<<<<< Updated upstream
+
+  create_table "admins", force: :cascade do |t|
+    t.integer "people"
+    t.string "place"
+    t.string "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+=======
+>>>>>>> Stashed changes
 
   create_table "identities", force: :cascade do |t|
     t.integer "user_id"
@@ -23,14 +34,36 @@ ActiveRecord::Schema.define(version: 20171011115756) do
 
   create_table "reservations", force: :cascade do |t|
     t.string "people"
-    t.string "place", default: "강남역"
+    t.string "place"
     t.string "time"
-    t.string "durationTime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "space_infos", force: :cascade do |t|
+<<<<<<< Updated upstream
+=======
+    t.string "name"
+    t.text "address"
+    t.integer "price_per_hour"
+    t.time "ot"
+    t.time "ct"
+    t.integer "tel"
+    t.binary "photo"
+    t.string "parking"
+    t.string "smoking"
+    t.string "projector"
+    t.string "wifi"
+    t.string "printer"
+    t.string "consent"
+    t.string "payment"
+    t.string "place"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spifs", force: :cascade do |t|
+>>>>>>> Stashed changes
     t.string "name"
     t.text "address"
     t.integer "price_per_hour"
