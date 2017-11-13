@@ -1945,6 +1945,9 @@
 	input[type="tel"],
 	input[type="search"],
 	input[type="url"],
+	input[type="number"],
+	input[type="date"],
+	input[type="datetime-local"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -1959,7 +1962,7 @@
 		outline: 0;
 		padding: 0 1em;
 		text-decoration: none;
-		width: 100%;
+		/*width: 100%;-->*/
 	}
 
 		input[type="text"]:invalid,
