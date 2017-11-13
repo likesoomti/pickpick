@@ -2,20 +2,42 @@
 
 <p>
   <strong>인원:</strong>
-  <%= @reservation.people %>
+  <p id="people"><%= @reservation.people %></p>
 </p>
 
 <p>
   <strong>장소:</strong>
-  <%= @reservation.place %>
+  <p id="location"><%= @reservation.place %></p>
 </p>
 
 <p>
   <strong>시간:</strong>
-  <%= @reservation.time %>
+  <p id="time"><%= @reservation.time %></p>
+
 </p>
 
 <%= link_to '예약 수정!!', edit_reservation_path(@reservation) %> |
 <%= link_to '처음으로', root_path %>
 <%= link_to '예약 취소!!!', @reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
 
+
+<script>
+
+    $(document).ready(function(){ 
+      var people = $('#people')[0].innerHTML;
+      var location = $('#location')[0].innerHTML;
+      var time_s = $('#time')[0].innerHTML;
+     
+
+      $.ajax({
+        method: "POST",
+        url: "some.php",
+        data: { name: "John", location: "Boston" }
+      })
+        .done(function( msg ) {
+          alert( "Data Saved: " + msg );
+      });
+
+      
+    });
+</script>

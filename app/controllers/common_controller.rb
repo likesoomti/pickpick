@@ -17,7 +17,13 @@ class CommonController < ApplicationController
     def html5_noti
       
     end
+    def chatbot
+    end
 
+    # 로그인 후 사용자 (권한 1)에게 보여줄 메인 컨트롤러
+    def main
+      
+    end
     private
      # soomti 11.05
      # 유저 정보 추가 입력 하게 해놓음 

@@ -1,4 +1,4 @@
-function notifyMe() {
+function notifyMe(people,location,time_s) {
     // Let's check if the browser supports notifications
     if (!("Notification" in window)) {
       alert("This browser does not support desktop notification");
@@ -8,10 +8,9 @@ function notifyMe() {
     else if (Notification.permission === "granted") {
       // If it's okay let's create a notification
       var msg={
-          body: " 예약 요청인:한수민" +
-                " 날짜:2017.10.10\n" +
-                " 시간:7:00~21:00 \n" +
-                " 인원:2           \n "+
+          body: "인원 :"+people +
+                "날짜 :"+time_s +
+                "장소 :"+location+
                 " 기타요청사항: 마이크 있나요? "
       }
       var notification = new Notification("예약 요청이 들어왔습니다",msg);
