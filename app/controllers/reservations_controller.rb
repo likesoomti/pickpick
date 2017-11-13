@@ -83,6 +83,7 @@ class ReservationsController < ApplicationController
       params.require(:reservation).permit(:people, :place, :time)
     end
     
+    
     # soomti 11.05
     # 유저 정보 추가 입력 하게 해놓음 
     def set_user
