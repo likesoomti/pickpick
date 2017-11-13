@@ -40,4 +40,7 @@ Rails.application.routes.draw do
   get 'admin/booking'
 
 
+  # main page
+  get 'main' => 'common#main'
+
 end
