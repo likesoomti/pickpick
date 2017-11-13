@@ -43,6 +43,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
       if @reservation.save
+        # 여기에 데이터를 뿌려야ㅐㅎ해해해해ㅐ ㄴ
        redirect_to @reservation, notice: '방 관리자들에게 요청을 성공적으로 전송했습니다.' 
       else
        render :new 
@@ -63,7 +64,7 @@ class ReservationsController < ApplicationController
   # 사용자가 예약요청을 취소하거나 관리자가 거절할 때  tykim 1005
   def destroy
     @reservation.destroy
-      redirect_to reservations_url, notice: '사용자의요청이 성공적으로 거절되었습니다'
+      redirect_to reservations_url, notice: '사용자의 요청이 성공적으로 거절되었습니다'
   end
   
   def user_destroy
@@ -80,9 +81,8 @@ class ReservationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
       #내가 허락한 파라미터들만 불러오겠다 (나중에 유저 파라미터 추가해야됨~)
-      params.require(:reservation).permit(:people, :place, :time, :durationTime)
+      params.require(:reservation).permit(:people, :place, :time)
     end
-    
     
     # soomti 11.05
     # 유저 정보 추가 입력 하게 해놓음 

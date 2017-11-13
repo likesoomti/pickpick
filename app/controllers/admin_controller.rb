@@ -20,17 +20,20 @@ class AdminController < ApplicationController
     # html5 notification
     # chatbot api 
     def booking
+
+        @list = Reservation.all
     end
 
-
+    
     # soomti 11.05
     # 유저 정보 추가 입력 하게 해놓음 
     def set_user
         @user = current_user
         if(@user)
-            if(@user.user_level == "0"|| @user.user_level == "1")
+            if(@user.user_level == "0")
                 redirect_to :user_add_info
-            end
+            else(@user.user_level == "1")
+                redirect_to :user_add_info
         end
     end
 end
