@@ -7,7 +7,7 @@
         <div class="content">
           <ul class="actions">
             <li>
-              <%= link_to "Booking", admin_booking_path ,:class => "button next" %>
+              <%= link_to "Booking", new_reservation_path ,:class => "button next" %>
             </li>
           </ul>
         </div>
@@ -17,9 +17,10 @@
         <div class="content">
             <ul class="actions">
               <li>
-                <%= link_to "history",admin_rev_history_path,:class => "button next" %>
+                <%= link_to "history",reservations_path,:class => "button next" %>
               </li>
             </ul>
+         
         </div>
     </div>
 </div>
@@ -56,3 +57,4 @@
         background-color: #6CA487
     }
 </style>
+
