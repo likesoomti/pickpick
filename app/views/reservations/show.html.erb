@@ -34,28 +34,33 @@
     font-size: 150%;
   }
 </style>
+
 <script>
     $(document).ready(function(){ 
       var people = $('#people')[0].innerHTML;
       var location = $('#location')[0].innerHTML;
       var time_start = $('#time')[0].innerHTML;
-   //   var time_end = $("");
-   console.log(people);
-   console.log("people")
+      // var time_end = $("");
+      console.log(people);
+      console.log("people")
      
       $.ajax({
-        method: "POST",
+        type: "POST",
         url: "/admin/booking",
         data: { 
           people: people,
           location: location,
           time_start: time_start,
           // time_end : this.time_end
+          success: function(json) {
+            alert(json);
+          },
+          error: function(xhr, status, error) {
+            alert(error);
+          }
         }
       })
-        .done(function( msg ) {
-          console.log("hohoho")
-      });
       
     });
+    
 </script>
