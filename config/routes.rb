@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'admin/rev_history'
   get 'admin/booking'
-
+  post 'admin/booking'
 
   # main page
   get 'main' => 'common#main'

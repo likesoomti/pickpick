@@ -32,8 +32,11 @@ class AdminController < ApplicationController
         if(@user)
             if(@user.user_level == "0")
                 redirect_to :user_add_info
-            else(@user.user_level == "1")
+            elsif(@user.user_level == "1")
                 redirect_to :user_add_info
+            else
+                puts "admin"
+            end
         end
     end
 end

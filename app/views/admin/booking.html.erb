@@ -48,3 +48,8 @@
         color:grey;
     }
 </style>
+<script>
+    $.post("/reservations/<%=params[:id]%>", function( data ) {
+        console.log(data)
+      });
+</script>

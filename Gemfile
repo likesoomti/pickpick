@@ -14,6 +14,7 @@ gem 'omniauth-facebook'
 
 # secret key 보호를 위한 gem figaro
 gem 'figaro'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # 2017.09.30 excavator
 # 부트스트랩 적용을 위한 gem
