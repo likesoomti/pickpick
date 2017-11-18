@@ -20,8 +20,7 @@ class AdminController < ApplicationController
     # html5 notification
     # chatbot api 
     def booking
-        render plain:"<script type='text/javascript'>alert('테스트');</script>"
-        @list = Reservation.all
+        @list = Reservation. all
     end
 
     
