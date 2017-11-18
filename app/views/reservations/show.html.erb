@@ -52,10 +52,10 @@
           location: location,
           time_start: time_start,
           // time_end : this.time_end
-          success: function(json) {
-            alert(json);
+          success: function(data) {
+            alert(data);
           },
-          error: function(xhr, status, error) {
+          error: function(error) {
             alert(error);
           }
         }
