@@ -3,11 +3,11 @@ class CreateSpaceInfos < ActiveRecord::Migration[5.1]
     create_table :space_infos do |t|
       t.string :name
       t.text :address
-      t.integer :price_per_hour
+      t.string :price_per_hour
       t.time :ot
       t.time :ct
-      t.integer :tel
-      t.binary :photo
+      t.string :tel
+      t.string :photo
       t.string :parking
       t.string :smoking
       t.string :projector
