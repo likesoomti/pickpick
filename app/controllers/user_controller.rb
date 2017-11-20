@@ -14,11 +14,12 @@ class UserController < ApplicationController
     # 이름과 휴대폰 번호를 입력한다.
     def facebook_add_info 
       # user가 로그인 상태가 아니라면 이전 페이지로 돌린다.
-      unless user_signed_in? 
-        redirect_to user_facebook_test_path
+      unless user_signed_in?
+        puts "here?" 
+        redirect_to '/'
       else
         if @user.user_level == '1'
-          redirect_to '/'
+          redirect_to main_path
         end
       end
       # 권한이 1일경우 메인 페이지로 돌린다.
@@ -39,9 +40,9 @@ class UserController < ApplicationController
       # 유효성 검사 후 1로 수정하는 코드 필요할듯.
       # 관리자
       # @user.user_level = 9
-      @user.user_level = (@user.user_level.to_i)+1
+      @user.user_level = (@user.user_level.to_i) + 1
       @user.save
-      redirect_to user_facebook_test_path
+      redirect_to main_path
     end
   
     private

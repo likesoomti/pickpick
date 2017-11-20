@@ -14,6 +14,7 @@ gem 'omniauth-facebook'
 
 # secret key 보호를 위한 gem figaro
 gem 'figaro'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # 2017.09.30 excavator
 # 부트스트랩 적용을 위한 gem
@@ -58,8 +59,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # 2017.10.05 tykim
   
-  # db를 한눈에 gem
-  gem 'rails_db'
+
 
 end
 

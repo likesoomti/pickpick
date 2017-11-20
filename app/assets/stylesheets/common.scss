@@ -6,3 +6,50 @@
     height:500px;
     background-color: pink;
 }
+html,body{
+    height: 100%;
+}
+*{
+    box-sizing: border-box;
+}
+#wrapper{
+    height: 100%;
+}
+.space_container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+.space_padding{
+    paddin-left: 10%;
+    paddin-right: 10%;
+}
+.space_login{
+    font-size: 200%;
+}
+.loginForm{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.loginColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 33%;
+}
+.devise_shared{
+    display: flex;
+    justify-content: center;
+}
+.space_devises_button div{
+    padding-bottom: 4%;
+}
+.space_shared div{
+    padding-bottom: 4%;
+}

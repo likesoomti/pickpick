@@ -37,7 +37,7 @@ class ManagerController < ApplicationController
       @user = current_user
       puts @user.user_level
       unless(@user.user_level == "9")        
-        redirect_to "/"
+        redirect_to main_path
       end
     end
 end

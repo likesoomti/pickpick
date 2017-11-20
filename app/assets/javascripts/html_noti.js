@@ -32,6 +32,7 @@ function notifyMe() {
   }Notification.requestPermission().then(function(result) {
     console.log(result,"hihi");
   });
+  
   function spawnNotification(theBody,theIcon,theTitle) {
     var options = {
         body: theBody,

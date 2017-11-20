@@ -2,11 +2,23 @@
 <div id="main">
   <section id="one">
     <div class="inner">
-
       <h1>방을 찾아보세요</h1>
       <%= render 'form', reservation: @reservation %>
-      <%= link_to '처음으로', root_path %>
-
     </div>
   </section>
 </div>
+
+<style>
+  #main{
+    display: flex;
+    justify-content: center;
+  }
+  #one{
+    width: 50%;
+  }
+  .inner{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+</style>

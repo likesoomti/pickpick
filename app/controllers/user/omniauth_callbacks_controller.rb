@@ -28,12 +28,12 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       puts @user.user_level
       puts if(@user.user_level == 0)
       if(@user.user_level == '0')
-        user_facebook_add_info_path
-      else
-        user_facebook_test_path
+        user_add_info_path
+      elsif(@user.user_level == '9')
+        admin_path
       end
     else
-      user_facebook_test_path
+      main_path
     end
   end
 end

@@ -1,21 +1,66 @@
-<p id="notice"><%= notice %></p>
+<div class="rev_info">
+  <p id="notice"><%= notice %></p>
+    <p><strong>인원</strong></p>
+    <p class="user_rev" id="people"><%= @reservation.people %>명 </p>
 
-<p>
-  <strong>인원:</strong>
-  <%= @reservation.people %>
-</p>
+    <p><strong>장소</strong></p>
+    <p class="user_rev" id="location"><%= @reservation.place %></p>
+ 
+    <p><strong>시간</strong></p>
+    <p class="user_rev"><%= @reservation.time.split("T")[0] %></p>
+    <p class="user_rev" id="time"><%= @reservation.time.split("T")[1]%> 부터  </p>
+    <p class="user_rev" id="time_end"><%=@reservation.durationTime %> 시간 </p>
+  <div class="rev_menu">
+  <%= link_to '예약 수정!!', edit_reservation_path(@reservation) %> |
+  <%= link_to '예약 취소!!!', @reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+<style>
+  .rev_info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    padding: 10%;
+  }
+  .rev_menu{
+    display: flex;
+  }
+  #wrapper{
+    width: 50%;
+  }
+  .user_rev{
+    font-size: 150%;
+  }
+</style>
 
-<p>
-  <strong>장소:</strong>
-  <%= @reservation.place %>
-</p>
-
-<p>
-  <strong>시간:</strong>
-  <%= @reservation.time %>
-</p>
-
-<%= link_to '예약 수정!!', edit_reservation_path(@reservation) %> |
-<%= link_to '처음으로', root_path %>
-<%= link_to '예약 취소!!!', @reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
-
+<script>
+    $(document).ready(function(){ 
+      var people = $('#people')[0].innerHTML;
+      var location = $('#location')[0].innerHTML;
+      var time_start = $('#time')[0].innerHTML;
+      // var time_end = $("");
+      console.log(people);
+      console.log("people")
+     
+      $.ajax({
+        type: "POST",
+        url: "/admin/booking",
+        data: { 
+          people: people,
+          location: location,
+          time_start: time_start,
+          // time_end : this.time_end
+          success: function(data) {
+            alert("request complete!");
+          },
+          error: function(error) {
+            alert("request error!");
+          }
+        }
+      })
+      
+    });
+    
+</script>
