@@ -92,6 +92,8 @@ class ReservationsController < ApplicationController
         if(@user.user_level="0")
           redirect_to :user_add_info
         end
+      else
+        redirect_to root_path
       end
     end
 end
