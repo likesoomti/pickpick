@@ -31,6 +31,8 @@ class User::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         user_add_info_path
       elsif(@user.user_level == '9')
         admin_path
+      else
+        main_path
       end
     else
       main_path
