@@ -59,8 +59,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   # 2017.10.05 tykim
   
-  # db를 한눈에 gem
-  gem 'rails_db'
+
 
 end
 

@@ -84,7 +84,7 @@ class ReservationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
       #내가 허락한 파라미터들만 불러오겠다 (나중에 유저 파라미터 추가해야됨~)
-      params.require(:reservation).permit(:people, :place, :time)
+      params.require(:reservation).permit(:people, :place, :time, :durationTime)
     end
     
     # soomti 11.05
@@ -95,6 +95,8 @@ class ReservationsController < ApplicationController
         if(@user.user_level="0")
           redirect_to :user_add_info
         end
+      else
+        redirect_to root_path
       end
     end
 end
