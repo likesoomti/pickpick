@@ -34,8 +34,6 @@ class CommonController < ApplicationController
         puts @user.user_level
         redirect_to :user_add_info
       end
-    else
-      redirect_to root_path
     end
   end
 end
