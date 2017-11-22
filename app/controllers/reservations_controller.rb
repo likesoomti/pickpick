@@ -48,6 +48,9 @@ class ReservationsController < ApplicationController
       else
        render :new 
       end
+      
+      ActionCable.server.broadcast \
+        "notice_channel_#{current_user.id}", { title: 'Test notice!', body: 'test message!' }
   end
 
   # PATCH/PUT /reservations/1

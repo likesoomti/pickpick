@@ -14,7 +14,7 @@ function notifyMe() {
                 " 인원:2           \n "+
                 " 기타요청사항: 마이크 있나요? "
       }
-      var notification = new Notification("예약 요청이 들어왔습니다",msg);
+      var notification = new Notification("예약 요청이 들어왔습니다", msg);
     }
   
     // Otherwise, we need to ask the user for permission
@@ -29,7 +29,7 @@ function notifyMe() {
   
     // At last, if the user has denied notifications, and you 
     // want to be respectful there is no need to bother them any more.
-  }Notification.requestPermission().then(function(result) {
+  } Notification.requestPermission().then(function(result) {
     console.log(result,"hihi");
   });
   
