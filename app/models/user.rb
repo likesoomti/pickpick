@@ -21,8 +21,8 @@ class User < ApplicationRecord
               email: auth.info.email,
               profile_img: auth.info.image,
               # remote_profile_img_url: auth.info.image.gsub('http://','https://'),
-
-              password: Devise.friendly_token[0,20]
+              password: Devise.friendly_token[0,20],
+              user_level: 10
             )
           user.save!
         end
