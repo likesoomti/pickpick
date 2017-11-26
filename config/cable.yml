@@ -1,9 +1,10 @@
 production: &production
   adapter: redis
-  url: redis://10.10.3.153:6381
+  url: redis://redis.example.com:6381
 
-development: &development
+local: &local
   adapter: redis
   url: redis://localhost:6379
-
-test: *development
+  
+development: *local
+test: *local

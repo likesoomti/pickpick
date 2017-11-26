@@ -44,6 +44,6 @@ Rails.application.routes.draw do
   # main page
   get 'main' => 'common#main'
 
-  mount ActionCable.server, at: '/cable'
+  mount ActionCable.server => '/cable'
 
 end
