@@ -8,4 +8,4 @@ App.notice = App.cable.subscriptions.create "NoticeChannel",
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
     new Notification data["title"], body: data["body"]
-    consol.log "message received complete"
+    console.log "message received complete"
