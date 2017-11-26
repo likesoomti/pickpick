@@ -1,8 +1,5 @@
 <!-- Menu -->
 <nav id="menu">
-  
-  <ul class="actions vertical">
-    <% if user_signed_in? %>
     <ul class="links">
     <li>
       <a href="/">Home</a>
@@ -12,34 +9,28 @@
     </li>
     <li>
       <a href="/space_infos">Space Informations</a>
-    </li>
-    
+    </li> 
   </ul>
   <ul class="actions vertical">
     <% if user_signed_in? %>
-    <li>
-      <% if(current_user.user_level == '9') %>
-        <%= link_to('Admin', manager_path, :method => :get, :class => 'button fit') %>
-      <% end %>
-    </li>    
-    <li>
-      <%= link_to('My reservations', reservations_path, :method => :get, :class => 'button fit') %>
-    </li>
-      
-    <li>
-      <%= link_to('logout', destroy_user_session_path, :method => :get, :class => 'button special fit') %>
-    </li>
-      
-      
-    <% else %>
-    
-    <li>
-        <%= link_to('login', new_user_session_path, :class => 'button fit') %>
-    </li>
-    
-    <li>
-        <%= link_to('Sign Up', new_user_registration_path , :class => "button special fit") %>
-    </li>
+      <li>
+        <% if(current_user.user_level == '9') %>
+          <%= link_to('Admin', manager_path, :method => :get, :class => 'button fit') %>
+        <% end %>
+      </li>    
+      <li>
+        <%= link_to('My reservations', reservations_path, :method => :get, :class => 'button fit') %>
+      </li>
+      <li>
+        <%= link_to('logout', destroy_user_session_path, :method => :get, :class => 'button special fit') %>
+      </li> 
+    <% else %> 
+        <li>
+            <%= link_to('login', new_user_session_path, :class => 'button fit') %>
+        </li>
+        <li>
+            <%= link_to('Sign Up', new_user_registration_path , :class => "button special fit") %>
+        </li>
     <% end %>
   </ul>
 </nav>
