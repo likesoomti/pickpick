@@ -77,8 +77,12 @@ class SpaceInfosController < ApplicationController
     # 유저 정보 추가 입력 하게 해놓음 
     def set_user
       @user = current_user
-      if(@user.user_level == "0")
-        redirect_to :user_add_info
+      if(@user)
+        if(@user.user_level == "0")
+          redirect_to :user_add_info
+        end
+      else
+        redirect_to "/"
       end
     end
 end

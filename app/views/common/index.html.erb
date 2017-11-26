@@ -11,7 +11,11 @@
 			<ul class="actions">
 				<li>	
 					<% if(current_user) %>
-						<div class="button"><%= current_user.email %></div>
+					
+						<div class="button">
+							<a href="/main" ><%= current_user.email %></a>
+							</div>
+
 					<% else %>
 						<a href="<%= new_user_session_path %>" class="button next">Login</a>
 					<% end %>
@@ -22,6 +26,7 @@
 </div>
 
 <style>
+
 #main{
 	height: 100%;
 }

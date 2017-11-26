@@ -1,6 +1,8 @@
 class User < ApplicationRecord
+  has_many :reservations
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 

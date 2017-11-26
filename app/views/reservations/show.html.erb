@@ -1,25 +1,36 @@
 <div class="rev_info">
-  <p id="notice"><%= notice %></p>
-    <p><strong>인원</strong></p>
-    <p class="user_rev" id="people"><%= @reservation.people %>명 </p>
+<p id="notice"><%= notice %></p>
 
-    <p><strong>장소</strong></p>
-    <p class="user_rev" id="location"><%= @reservation.place %></p>
- 
-    <p><strong>시간</strong></p>
-    <p class="user_rev"><%= @reservation.time.split("T")[0] %></p>
-    <p class="user_rev" id="time"><%= @reservation.time.split("T")[1]%> 부터  </p>
-    <p class="user_rev" id="time_end"><%=@reservation.durationTime %> 시간 </p>
-  <div class="rev_menu">
+<p>
+  <strong>People:</strong>
+  
+  <p class="user_rev" id="people"><%= @reservation.people %>명 </p>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  
+  <p class="user_rev" id="location"><%= @reservation.place %></p>
+</p>
+
+<p><strong>시간</strong></p>
+<p class="user_rev"><%= @reservation.time.split("T")[0] %></p>
+<p class="user_rev" id="time"><%= @reservation.time.split("T")[1]%> 부터  </p>
+<p class="user_rev" id="time_end"><%=@reservation.durationTime %> 까지 </p>
+
+<div class="rev_menu">
   <%= link_to '예약 수정!!', edit_reservation_path(@reservation) %> |
   <%= link_to '예약 취소!!!', @reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </div>
 <style>
+  #wrapper{
+    width: 100%;
+  }
   .rev_info{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 50%;
     align-content: center;
     justify-content: center;
     padding: 10%;

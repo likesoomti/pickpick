@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :price_per_hour %>
-    <%= form.number_field :price_per_hour, id: :space_info_price_per_hour %>
+    <%= form.text_field :price_per_hour, id: :space_info_price_per_hour %>
   </div>
 
   <div class="field">
@@ -38,14 +38,15 @@
 
   <div class="field">
     <%= form.label :tel %>
-    <%= form.number_field :tel, id: :space_info_tel %>
+    <%= form.text_field :tel, id: :space_info_tel %>
   </div>
 
   <div class="field">
     <%= form.label :photo %>
-    <%= form.text_field :photo, id: :space_info_photo %>
+    <%= form.file_field :photo, id: :space_info_photo %>
+    
   </div>
-
+  
   <div class="field">
     <%= form.label :parking %>
     <%= form.text_field :parking, id: :space_info_parking %>

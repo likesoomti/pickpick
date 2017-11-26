@@ -1,9 +1,7 @@
 # 2017.09.25 soomti
 # ReservationController create
-# 사용자 관련 컨트롤러.
-
-
 class ReservationsController < ApplicationController
+  before_action :authenticate_user!
 
   # to do
     # 예약 컨트롤러
@@ -15,21 +13,22 @@ class ReservationsController < ApplicationController
     # 둘다 승인 된 리스트
 
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
-  # 사용자 권한 체크
   before_action :set_user
+  # 사용자 권한 체크
 
   # GET /reservations
+  # GET /reservations.json
   #들어온 요청들을 관리자가 보는 곳 tykim 1005
   def index
     @reservations = Reservation.all
   end
 
   # GET /reservations/1
+  # GET /reservations/1.json
   def show
   end
 
   # GET /reservations/new
-  #사용자가 관리자에게 시간 장소 인원을 제출하는 폼이 있는곳 tykim1005
   def new
     @reservation = Reservation.new
   end
@@ -39,9 +38,11 @@ class ReservationsController < ApplicationController
   end
 
   # POST /reservations
+  # POST /reservations.json
   # 예약 폼을 전송하는 메소드
   def create
     @reservation = Reservation.new(reservation_params)
+
       if @reservation.save
         # 여기에 데이터를 뿌려야ㅐㅎ해해해해ㅐ ㄴ
        redirect_to @reservation, notice: '방 관리자들에게 요청을 성공적으로 전송했습니다.'
@@ -51,28 +52,31 @@ class ReservationsController < ApplicationController
 
       ActionCable.server.broadcast \
         "notice_channel_#{current_user.id}", { title: 'Test notice!', body: 'test message!' }
+
   end
 
   # PATCH/PUT /reservations/1
-  # 사용자가 예약 폼을 수정할 때 tykim 1005
+  # PATCH/PUT /reservations/1.json
   def update
+    respond_to do |format|
       if @reservation.update(reservation_params)
-        redirect_to @reservation, notice: 'Reservation was successfully updated.'
+        format.html { redirect_to @reservation, notice: 'Reservation was successfully updated.' }
+        format.json { render :show, status: :ok, location: @reservation }
       else
-        render :edit
+        format.html { render :edit }
+        format.json { render json: @reservation.errors, status: :unprocessable_entity }
       end
+    end
   end
 
   # DELETE /reservations/1
-  # 사용자가 예약요청을 취소하거나 관리자가 거절할 때  tykim 1005
+  # DELETE /reservations/1.json
   def destroy
     @reservation.destroy
-      redirect_to reservations_url, notice: '사용자의 요청이 성공적으로 거절되었습니다'
-  end
-
-  def user_destroy
-    @reservation.destroy
-      redirect_to @reservation, notice: '예약 요청을 취소했습니다.'
+    respond_to do |format|
+      format.html { redirect_to reservations_url, notice: 'Reservation was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
@@ -83,8 +87,7 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      #내가 허락한 파라미터들만 불러오겠다 (나중에 유저 파라미터 추가해야됨~)
-      params.require(:reservation).permit(:people, :place, :time, :durationTime)
+      params.require(:reservation).permit(:people, :time, :place, :durationTime, :user_id)
     end
 
     # soomti 11.05
@@ -101,4 +104,5 @@ class ReservationsController < ApplicationController
         redirect_to root_path
       end
     end
+
 end

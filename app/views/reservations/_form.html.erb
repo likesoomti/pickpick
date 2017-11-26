@@ -1,47 +1,51 @@
-<%= form_with(model: reservation, local: true) do |form| %>
-  <% if reservation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+<div class="rev_form">
+    <%= form_with(model: reservation, local: true) do |form| %>
+      <% if reservation.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
 
-      <ul>
-      <% reservation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% reservation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :people %>
-    <%= form.number_field :people, id: :reservation_people, min: "1", max: "20", title: "1~20까지의 숫자만 입력하세요" %>
-  </div>
+      <div class="field">
+        <%= form.label :people %>
+        <%= form.number_field :people, id: :reservation_people, min: "1", max: "20", title: "1~20까지의 숫자만 입력하세요" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :place %>
-    <%= form.text_field :place, id: :reservation_place, placeholder: "현재는 강남역만 가능합니다.",  :value => "강남역" %>
-  </div>
+      <div class="field">
+        <%= form.label :place %>
+        <%= form.text_field :place, id: :reservation_place, placeholder: "현재는 강남역만 가능합니다.",  :value => "강남역", :readonly => true %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :모임일 %> <p>마우스를 올리시고 아래쪽 화살표를 누르시면 달력이 나옵니다.</br>
+                                    (오전,오후) 시간 분을 모두 입력하세요!</p>
+        <%= form.datetime_local_field :time, id: :reservation_time %>
+      </div>
+      
+      <div class="field">
+        <%= form.label :durationTime %>
+        <%= form.number_field :durationTime, id: :reservation_durationTime, min: "1", max: "13", title: "1~13까지의 숫자만 입력하세요" %>
+      </div>
+      
+      
+      <div class="field">
+        <%= form.hidden_field :user_id , :value => current_user.id %>
+      </div>
 
-  <div class="field">
-    <%= form.label :모임일 %> <p>마우스를 올리시고 아래쪽 화살표를 누르시면 달력이 나옵니다.</br>
-                                 (오전,오후) 시간 분을 모두 입력하세요!</p>
-    <%= form.datetime_local_field :time, id: :reservation_time %>
-  </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+</div>
 
-
-   <div class="field">
-    <%= form.label :모임시간 %> <p>몇 시간동안 모임을 가지실지 입력하세요. </br> 
-                                    시간단위로 숫자만 입력하세요!</p>
-    <%= form.number_field :durationTime, id: :durationTime_time, min: "1", max: "15", title: "1~15까지의 숫자만 입력하세요" %>
-  </div>
- 
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
 <style>
-  
+  .rev_form{
+    width: 50%;
+  }
 </style>
-
-<script>
-</script>
