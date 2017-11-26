@@ -36,9 +36,10 @@ class ManagerController < ApplicationController
     def set_user
       @user = current_user
       if(@user)
-        if(@user.user_level == "9")        
-          redirect_to main_path
-        elsif(@user.user_level == "1")
+        #if
+        #if(@user.user_level == "9")        
+          #redirect_to main_path
+        if(@user.user_level == "1")
           redirect_to root_path
         end
       end

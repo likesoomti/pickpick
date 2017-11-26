@@ -4,13 +4,16 @@
     <title>SpacePick</title>
 
     <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		
 
     <%= csrf_meta_tags %>
 
     <!-- 2017.11.26 excavator
     actioncable meta tag -->
     <%#= action_cable_meta_tag %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!-- bootstrap 4 css cdn tag
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -23,6 +26,8 @@
 
   <body>
     <div id="wrapper">
+      <!--
+      flash 메시지 띄워주는건데 안이뻐서 주석<%= render partial: "partials/flash_messages", flash: flash %>-->
 
       <%= render 'partials/header' %>
       <%= render 'partials/menu' %>
@@ -30,8 +35,29 @@
       <%= yield %>
 
       <%# render 'partials/contact' %>
+      <hr>
       <%= render 'partials/footer' %>
     </div>
+    
+    <style>
+
+#main{
+	height: 100%;
+}
+section{
+	height: 100%;
+}
+#two{
+	display: flex;
+	justify-content: center;
+}
+div.inner{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+</style>
 
   </body>
 
