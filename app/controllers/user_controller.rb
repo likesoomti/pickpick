@@ -9,10 +9,13 @@ class UserController < ApplicationController
 
     # soomti
     # facebook test controller
+    def add_info 
+    end
 
     # 추가 정보 입력하는 페이지.
     # 이름과 휴대폰 번호를 입력한다.
     def facebook_add_info 
+      puts "facebook_add_info"
       # user가 로그인 상태가 아니라면 이전 페이지로 돌린다.
       unless user_signed_in?
         puts "here?" 
@@ -40,7 +43,12 @@ class UserController < ApplicationController
       # 유효성 검사 후 1로 수정하는 코드 필요할듯.
       # 관리자
       # @user.user_level = 9
-      @user.user_level = (@user.user_level.to_i) + 1
+      puts "user level"
+      puts @user.user_level
+      if(@user.user_level.to_i == 0)
+        puts "hi"
+        @user.user_level = (@user.user_level.to_i) + 1
+      end
       @user.save
       redirect_to main_path
     end
@@ -49,7 +57,7 @@ class UserController < ApplicationController
     def set_user
       @user = current_user
       if(@user.user_level == "0")
-        redirect_to :user_add_info_path 
+        redirect_to user_add_info_path 
       end
     end
 end

@@ -50,7 +50,11 @@ class ReservationsController < ApplicationController
         render :new
         
       end
-    
+
+      
+      ActionCable.server.broadcast \
+        "notice_channel_#{current_user.id}", { title: 'Test notice!', body: 'test message!' }
+
   end
 
   # PATCH/PUT /reservations/1
@@ -96,11 +100,15 @@ class ReservationsController < ApplicationController
     # soomti 11.05
     # 유저 정보 추가 입력 하게 해놓음 
     def set_user
-      if(@user)
+      if(@user == nil)
         @user = current_user
-        if(@user.user_level="0")
+        if(@user.user_level == "0")
           redirect_to :user_add_info
         end
+      else
+        puts "user else"
+        puts @user
+        redirect_to root_path
       end
     end
     

@@ -10,9 +10,14 @@
 				
 			<ul class="actions">
 				<li>	
+
 					<% if(@user) %>
 					<div class="button"><%= @user.email %></div> <br />
 					<center><a href="/main">GO!</a></center>
+
+					<% if(current_user) %>
+						<div class="button"><%= current_user.email %></div>
+
 					<% else %>
 						<a href="<%= new_user_session_path %>" class="button next">Login</a>
 					<% end %>

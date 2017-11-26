@@ -5,9 +5,18 @@
                 <p>STORE NAME</p>
             </div>
             <div class="space_content">
+                <h2>요청내역</h2>
                 <% @list.each do |p| %>
-                    <h1><%=p.id%></h1> 
-                    <h1><%=p.created_at%></h1>
+                <div>
+                    email 님
+                    <label>인원수</label>
+                    <p><%=p.people%>명</p>
+                    <p><%=p.time.split("T")[0]%>~</p>
+                    <button>수락</button>
+                    <button>거절</button>
+                </div>
+                    <hr />
+
                 <% end %>
             </div>
         </div>
@@ -16,6 +25,9 @@
 <style>
     *{
         box-sizing: border-box;
+    }
+    button{
+        color: black;
     }
     html,body{
         margin: 0;
@@ -26,26 +38,31 @@
         height: 100%;
     }
     .booking_container{
-        height: 100%;
         color: #000;
         background-color: #f9f9fb;
+        overflow: scroll;
     }
     .booking_padding{
         padding-left: 10%;
         padding-right: 10%;
-        height: 100%;
     }
     .booking_chat{
-        height: 100%;
+        overflow: scroll;
     }
     .space_name{
         display: flex;
+        color: #000;
         justify-content: flex-start;
         align-content: center;
         padding: 10%;
     }
-    .space_content p{
-        color:grey;
+    .space_content div h2{
+        color:black;
+    }
+    .space_content{
+        width: 100%;
+        padding: 10%;
+        overflow: scroll;
     }
 </style>
 <script>
