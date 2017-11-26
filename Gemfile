@@ -8,6 +8,9 @@ end
 # 2017.09.25 soomti
 # 회원가입을 위한 devise gem
 gem 'devise'
+#한글화
+gem 'devise-i18n'
+gem 'rails-i18n'
 # facebook 연동에 필요한 omniauth, facebook gem
 gem 'omniauth'
 gem 'omniauth-facebook'

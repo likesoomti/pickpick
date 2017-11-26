@@ -1,18 +1,19 @@
 <!-- Menu -->
 <nav id="menu">
-  <ul class="links">
+  
+  <ul class="actions vertical">
+    <% if user_signed_in? %>
+    <ul class="links">
     <li>
-      <a href="/common/index">Home</a>
+      <a href="/">Home</a>
     </li>
     <li>
-      <a href="/common/landing">Landing</a>
+      <a href="/main">Main Page (Reservation) </a>
     </li>
     <li>
-      <a href="/common/generic">Generic</a>
+      <a href="/space_infos">Space Informations</a>
     </li>
-    <li>
-      <a href="/common/elements">Elements</a>
-    </li>
+    
   </ul>
   <ul class="actions vertical">
     <% if user_signed_in? %>
