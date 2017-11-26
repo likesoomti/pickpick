@@ -16,7 +16,11 @@
   </ul>
   <ul class="actions vertical">
     <% if user_signed_in? %>
-    
+    <li>
+      <% if(current_user.user_level == '9') %>
+        <%= link_to('Admin', manager_path, :method => :get, :class => 'button fit') %>
+      <% end %>
+    </li>    
     <li>
       <%= link_to('My reservations', reservations_path, :method => :get, :class => 'button fit') %>
     </li>

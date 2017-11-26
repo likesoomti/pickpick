@@ -8,12 +8,14 @@
                 <h2>요청내역</h2>
                 <% @list.each do |p| %>
                 <div>
-                    email 님
+                    <%= p.user.email%>님
+                    
                     <label>인원수</label>
                     <p><%=p.people%>명</p>
-                    <p><%=p.time.split("T")[0]%>~</p>
-                    <button>수락</button>
-                    <button>거절</button>
+                    <p><%=p.time.split("T")[0]%><%=p.time.split("T")[1]%> 부터 <%= p.durationTime %> 시간</p>
+                   
+                    <a href="/reservations/accept/<%=p.id%>/0"><button>수락</button></a>    
+                    <a href="/reservations/accept/<%=p.id%>/1"><button>거절</button></a>
                 </div>
                     <hr />
 
@@ -25,8 +27,12 @@
 <style>
     *{
         box-sizing: border-box;
+        color: black;
     }
     button{
+        color: black;
+    }
+    h2{
         color: black;
     }
     html,body{
@@ -58,6 +64,7 @@
     }
     .space_content div h2{
         color:black;
+        border: 1px solid black;
     }
     .space_content{
         width: 100%;

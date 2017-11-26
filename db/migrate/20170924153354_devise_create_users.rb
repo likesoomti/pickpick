@@ -36,6 +36,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       # 0 일 경우에는, 사용자 시큐리티 설정. 권한을 입력하는 값을 넣는다.
       t.string :user_level, default: 0
       
+      # 관리자들이 가지고있는 스토어 값을 저장한다.
+      t.integer :manager_store_id
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at

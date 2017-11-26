@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20171126095942) do
   create_table "reservation_accepts", force: :cascade do |t|
     t.integer "reservation_id"
     t.integer "user_id"
+    t.integer "store"
+    t.boolean "rev_ok"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["reservation_id"], name: "index_reservation_accepts_on_reservation_id"
@@ -75,6 +77,7 @@ ActiveRecord::Schema.define(version: 20171126095942) do
     t.string "phone_number"
     t.string "user_name"
     t.string "user_level", default: "0"
+    t.integer "manager_store_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "profile_img"

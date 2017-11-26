@@ -42,7 +42,8 @@ class UserController < ApplicationController
       
       # 유효성 검사 후 1로 수정하는 코드 필요할듯.
       # 관리자
-      # @user.user_level = 9
+       @user.user_level = 3
+       @user.manager_store_id =2
       puts "user level"
       puts @user.user_level
       if(@user.user_level.to_i == 0)

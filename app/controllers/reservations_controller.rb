@@ -66,6 +66,28 @@ class ReservationsController < ApplicationController
     end
   end
 
+  def accepts
+    reservation_accept = params[:okay]
+    rev_content = Reservation.find(params[:id])
+    rev_okay = ReservationAccept.new
+
+    if(reservation_accept == 0)     
+      rev_okay.rev_ok = true
+    else
+      rev_okay.rev_ok = false
+    end
+    rev_okay.user_id = rev_content.user_id
+    rev_okay.reservation_id = rev_content.id
+    rev_okay.store = current_user.manager_store_id
+    rev_okay.save
+
+    
+
+  end
+
+  def reservation_accept
+    @reservation = ReservationAccept.where(user: current_user, store: params[:id] )
+  end
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params

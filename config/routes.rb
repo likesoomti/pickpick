@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   get 'admin/booking'
 
   get 'reservations/reservation_accept/:id' => 'reservations#reservation_accept'
-  
+  get 'reservations/accept/:id/:okay' => 'reservations#accepts'
 
   # main page
   get 'main' => 'common#main'
