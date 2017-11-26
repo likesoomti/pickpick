@@ -22,14 +22,12 @@ ActiveRecord::Schema.define(version: 20171126095942) do
   end
 
   create_table "reservation_accepts", force: :cascade do |t|
-    t.integer "reservation_id"
-    t.integer "user_id"
+    t.integer "reservation"
+    t.integer "user"
     t.integer "store"
     t.boolean "rev_ok"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["reservation_id"], name: "index_reservation_accepts_on_reservation_id"
-    t.index ["user_id"], name: "index_reservation_accepts_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -46,11 +44,11 @@ ActiveRecord::Schema.define(version: 20171126095942) do
   create_table "space_infos", force: :cascade do |t|
     t.string "name"
     t.text "address"
-    t.integer "price_per_hour"
+    t.string "price_per_hour"
     t.time "ot"
     t.time "ct"
-    t.integer "tel"
-    t.binary "photo"
+    t.string "tel"
+    t.string "photo"
     t.string "parking"
     t.string "smoking"
     t.string "projector"

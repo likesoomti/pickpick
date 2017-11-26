@@ -12,7 +12,7 @@ class AdminController < ApplicationController
     end
 
     def rev_history
-        # test
+        @list = ReservationAccept.where(store: current_user.manager_store_id, rev_ok: true)
     end 
     
     # html5 notification

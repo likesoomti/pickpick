@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   # GET /reservations.json
   #들어온 요청들을 관리자가 보는 곳 tykim 1005
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.where(user_id: current_user.id)
   end
 
   # GET /reservations/1
@@ -76,27 +76,27 @@ class ReservationsController < ApplicationController
   end
 
   def accepts
-    reservation_accept = params[:okay]
+   
     rev_content = Reservation.find(params[:id])
-    rev_okay = ReservationAccept.new
-
-    if(reservation_accept == 0)     
+    rev_okay = ReservationAccept.new   
+    rev_okay.user =  rev_content.user_id
+    rev_okay.store = current_user.manager_store_id
+    rev_okay.reservation = rev_content.id     
+  
+    if(params[:okay] == "0")     
       rev_okay.rev_ok = true
     else
-      rev_okay.rev_ok = false
+      rev_okay.rev_ok = false;
     end
-    rev_okay.user_id = rev_content.user_id
-    rev_okay.reservation_id = rev_content.id
-    rev_okay.store = current_user.manager_store_id
     rev_okay.save
 
-    
-
+    redirect_to '/admin'
   end
 
   def reservation_accept
-    @reservation = ReservationAccept.where(user: current_user, store: params[:id] )
+    @reservation = ReservationAccept.where(user: current_user, store: params[:id],rev_ok: true)
   end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params

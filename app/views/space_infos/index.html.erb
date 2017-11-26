@@ -1,17 +1,16 @@
+<div class="space_info">
 <p id="notice"><%= notice %></p>
 
-<h1>Space Infos</h1>
+<h1>가게 정보</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Price per hour</th>
-      <th>Ot</th>
-      <th>Ct</th>
+      <th>이름</th>
+      <th>시간당가격</th>
+      <th>오픈시간</th>
+      <th>닫는시간</th>
       <th>Tel</th>
-      <th>Photo</th>
       <th>Parking</th>
       <th>Smoking</th>
       <th>Projector</th>
@@ -28,12 +27,10 @@
     <% @space_infos.each do |space_info| %>
       <tr>
         <td><%= space_info.name %></td>
-        <td><%= space_info.address %></td>
         <td><%= space_info.price_per_hour %></td>
-        <td><%= space_info.ot %></td>
-        <td><%= space_info.ct %></td>
+        <td><%= space_info.ot.to_s[10..15] %></td>
+        <td><%= space_info.ct.to_s[10..15] %></td>
         <td><%= space_info.tel %></td>
-        <td><%= space_info.photo %></td>
         <td><%= space_info.parking %></td>
         <td><%= space_info.smoking %></td>
         <td><%= space_info.projector %></td>
@@ -53,3 +50,10 @@
 <br>
 
 <%= link_to 'New Space Info', new_space_info_path %>
+</div>
+
+<style>
+  .space_info{
+    padding: 5%;
+  }
+</style>

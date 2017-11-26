@@ -7,18 +7,20 @@
             <div class="space_content">
                 <h2>요청내역</h2>
                 <% @list.each do |p| %>
-                <div>
-                    <%= p.user.email%>님
+                    <% unless(ReservationAccept.where(reservation: p.id).exists?) %>
+                    <div>
+                        <%= p.user.email%>님
+                        
+                        <label>인원수</label>
+                        <p><%=p.people%>명</p>
+                        <p><%=p.time.split("T")[0]%><%=p.time.split("T")[1]%> 부터 <%= p.durationTime %> 시간</p>
                     
-                    <label>인원수</label>
-                    <p><%=p.people%>명</p>
-                    <p><%=p.time.split("T")[0]%><%=p.time.split("T")[1]%> 부터 <%= p.durationTime %> 시간</p>
+                        <a href="/reservations/accept/<%=p.id%>/0"><button>수락</button></a>    
+                        <a href="/reservations/accept/<%=p.id%>/1"><button>거절</button></a>
                    
-                    <a href="/reservations/accept/<%=p.id%>/0"><button>수락</button></a>    
-                    <a href="/reservations/accept/<%=p.id%>/1"><button>거절</button></a>
-                </div>
-                    <hr />
-
+                        <hr />
+                    </div>
+                    <% end %>
                 <% end %>
             </div>
         </div>
