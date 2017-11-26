@@ -1,28 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="reservation_controller">
+  <p id="notice"><%= notice %></p>
 
-<h1>새로운 예약들 (관리자가 작성된 예약들을 보는 곳)</h1>
+  <h1>새로운 예약들 (관리자가 작성된 예약들을 보는 곳)</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>인원</th>
-      <th>장소</th>
-      <th>시간</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reservations.each do |reservation| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= reservation.people %></td>
-        <td><%= reservation.place %></td>
-        <td><%= reservation.time %></td>
-        <td><%= link_to '거절', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>인원</th>
+        <th>장소</th>
+        <th>시간</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= reservation.people %></td>
+          <td><%= reservation.place %></td>
+          <td><%= reservation.time %></td>
+          <td><%= link_to '거절', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
+  <br>
+
+</div>
+<style>
+
+</style>
