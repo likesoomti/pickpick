@@ -2,21 +2,7 @@
 # ReservationController create
 # 사용자 관련 컨트롤러. 
 class ReservationsController < ApplicationController
-<<<<<<< HEAD
   before_action :authenticate_user! 
-=======
-  before_action :authenticate_user!
-  # to do
-    # 예약 컨트롤러
-    
-    # 가게가 예약 가능한지 체크
-    
-   
-    # 가게가 되었다고 오케이 한 리스트 
-    # 둘다 승인 된 리스트 
-    
-  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
->>>>>>> origin/master
   before_action :set_user
   # 사용자 권한 체크
 
@@ -116,11 +102,6 @@ class ReservationsController < ApplicationController
     def reservation_params
       params.require(:reservation).permit(:people, :time, :place, :durationTime, :user_id)
     end
-<<<<<<< HEAD
-=======
-    
-    
->>>>>>> origin/master
     # soomti 11.05
     # 유저 정보 추가 입력 하게 해놓음 
     def set_user
