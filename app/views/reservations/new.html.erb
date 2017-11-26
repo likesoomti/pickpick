@@ -1,5 +1,13 @@
+<div class="rev_container">
 <h1>New Reservation</h1>
 
 <%= render 'form', reservation: @reservation %>
 
 <%= link_to 'Back', reservations_path %>
+</div>
+<style>
+    .rev_container{
+        padding: 5%;
+        justify-content: center;
+    }
+</style>
