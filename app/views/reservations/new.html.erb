@@ -1,24 +1,5 @@
-<!-- 사용자가 예약 폼을 작성하는 곳 -->
-<div id="main">
-  <section id="one">
-    <div class="inner">
-      <h1>방을 찾아보세요</h1>
-      <%= render 'form', reservation: @reservation %>
-    </div>
-  </section>
-</div>
+<h1>New Reservation</h1>
 
-<style>
-  #main{
-    display: flex;
-    justify-content: center;
-  }
-  #one{
-    width: 50%;
-  }
-  .inner{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-  }
-</style>
+<%= render 'form', reservation: @reservation %>
+
+<%= link_to 'Back', reservations_path %>

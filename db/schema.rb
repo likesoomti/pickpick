@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011115756) do
+ActiveRecord::Schema.define(version: 20171122095814) do
 
   create_table "identities", force: :cascade do |t|
     t.integer "user_id"
@@ -23,11 +23,13 @@ ActiveRecord::Schema.define(version: 20171011115756) do
 
   create_table "reservations", force: :cascade do |t|
     t.string "people"
-    t.string "place", default: "강남역"
     t.string "time"
+    t.string "place"
     t.string "durationTime"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "space_infos", force: :cascade do |t|
