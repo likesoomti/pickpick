@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   # 태영 라우트 예약 페이지
   resources :space_infos
   resources :reservations
-  get '/reservations/user_page' => "reservations#user_page"
-
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks'}
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -40,6 +38,8 @@ Rails.application.routes.draw do
   get 'admin/rev_history'
   get 'admin/booking'
 
+  get 'reservations/reservation_accept/:id' => 'reservations#reservation_accept'
+  
 
   # main page
   get 'main' => 'common#main'

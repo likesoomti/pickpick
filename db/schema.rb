@@ -22,8 +22,12 @@ ActiveRecord::Schema.define(version: 20171126095942) do
   end
 
   create_table "reservation_accepts", force: :cascade do |t|
+    t.integer "reservation_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["reservation_id"], name: "index_reservation_accepts_on_reservation_id"
+    t.index ["user_id"], name: "index_reservation_accepts_on_user_id"
   end
 
   create_table "reservations", force: :cascade do |t|

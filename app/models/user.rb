@@ -3,7 +3,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
          
-
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # user와 identity가 nil이 아니라면 받는다

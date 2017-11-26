@@ -10,15 +10,15 @@
 				
 			<ul class="actions">
 				<li>	
-					<% if(current_user) %>
-					
-						<div class="button">
-							<a href="/main" ><%= current_user.email %></a>
-							</div>
+				<% if(current_user) %>
+				
+					<div class="button">
+						<a href="/main" ><%= current_user.email %></a>
+					</div>
 
-					<% else %>
-						<a href="<%= new_user_session_path %>" class="button next">Login</a>
-					<% end %>
+				<% else %>
+					<a href="<%= new_user_session_path %>" class="button next">Login</a>
+				<% end %>
 				</li>
 			</ul>
 		</div>
