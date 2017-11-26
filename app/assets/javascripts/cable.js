@@ -8,6 +8,6 @@
 (function() {
   this.App || (this.App = {});
 
-  App.cable = ActionCable.createConsumer('ws://spacepick.org/cable');
+  App.cable = ActionCable.createConsumer('ws://localhost:80/cable');
 
 }).call(this);
