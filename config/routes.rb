@@ -28,8 +28,8 @@ Rails.application.routes.draw do
 
   # manager page
   get 'manager' => 'manager#index'
-  get 'manager/new' 
-  get 'manager/qna' 
+  get 'manager/new'
+  get 'manager/qna'
   get 'manager/user'
   get 'manager/space'
 
@@ -42,5 +42,7 @@ Rails.application.routes.draw do
 
   # main page
   get 'main' => 'common#main'
+
+  mount ActionCable.server, at: '/cable'
 
 end

@@ -24,6 +24,10 @@ gem 'jquery-rails'
 # Use font-awesome as the css library
 gem 'font-awesome-rails'
 
+# 2017.11.23 excavator
+# ActionCable을 위한 gem
+gem 'redis', '~> 3.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record
@@ -58,7 +62,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # 2017.10.05 tykim
-  
+
 
 
 end
