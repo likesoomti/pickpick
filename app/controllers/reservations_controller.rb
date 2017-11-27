@@ -80,16 +80,18 @@ class ReservationsController < ApplicationController
     rev_content = Reservation.find(params[:id])
     rev_okay = ReservationAccept.new
 
-    if(reservation_accept == 0)     
+    if(reservation_accept == '0')     
       rev_okay.rev_ok = true
+      
+      rev_okay.user_id = rev_content.user_id
+      rev_okay.reservation_id = rev_content.id
+      rev_okay.store = current_user.manager_store_id
     else
       rev_okay.rev_ok = false
     end
-    rev_okay.user_id = rev_content.user_id
-    rev_okay.reservation_id = rev_content.id
-    rev_okay.store = current_user.manager_store_id
+    
     rev_okay.save
-
+    Rails.logger.info(rev_okay.errors.inspect)
     
 
   end
