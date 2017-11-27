@@ -78,6 +78,7 @@ class ReservationsController < ApplicationController
   def accepts
    
     rev_content = Reservation.find(params[:id])
+    puts rev_content.user_id
     rev_okay = ReservationAccept.new   
     rev_okay.user =  rev_content.user_id
     rev_okay.store = current_user.manager_store_id
