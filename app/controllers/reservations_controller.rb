@@ -78,7 +78,6 @@ class ReservationsController < ApplicationController
   def accepts
    
     rev_content = Reservation.find(params[:id])
-    puts rev_content.user_id
     rev_okay = ReservationAccept.new   
     rev_okay.user =  rev_content.user_id
     rev_okay.store = current_user.manager_store_id
@@ -86,13 +85,10 @@ class ReservationsController < ApplicationController
   
     if(params[:okay] == "0")     
       rev_okay.rev_ok = true
-      
-      rev_okay.user_id = rev_content.user_id
-      rev_okay.reservation_id = rev_content.id
-      rev_okay.store = current_user.manager_store_id
     else
       rev_okay.rev_ok = false;
     end
+    
     rev_okay.save
 
     redirect_to '/admin'
